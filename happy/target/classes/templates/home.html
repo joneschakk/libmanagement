@@ -1,0 +1,129 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dashboard</title>
+<style>
+form { width: 400px}
+label { float: left; width: 250px; }
+input[type=text] { float: left; width: 250px; }
+.clear { clear: both; height: 0; line-height: 0; }
+.floatright { float: right; }
+
+#AdBk {
+    background-color: lightblue;
+    margin-top: 20px;
+}
+#RmBk {
+    background-color: orange;
+    margin-top: 20px;
+}
+#AdUsr {
+    background-color: lightblue;
+    margin-top: 20px;
+}
+
+.displaynone{
+	display:none;
+	
+}
+
+</style>
+<h1>Admin Dashboard</h1>
+</head>
+<body>
+
+
+<div id="one">
+<button onclick="AdBk()">Add Book</button>
+<button onclick="RmBk()">Remove Book</button>
+<button onclick="AdUsr()">Add User</button>
+<button onclick="RmUsr()">Remove User</button>
+<button onclick="DUsr()">Deactivate User</button>
+<button onclick="search()">Search</button>
+</div>
+
+<div id="AdBk" class="displaynone">
+<form action="addBook" method="post">
+<h2><u>Add Books Here</u></h2>
+<label for ="bkID">BOOK ID</label><input type="text" name="id"><br>
+<label for ="tltBK">TITLE OF THE BOOK</label><input type="text" name="title"><br>
+<label for ="authBK">AUTHOR OF THE BOOK</label><input type="text" name="author"><br>
+<br class="clear" />
+	<br />
+<input type="submit"><br>
+</form></div>
+
+<div id="RmBk" class="displaynone">
+<form action="removeBook" method="post">
+<h2><u>Remove Books Here</u></h2>
+<label for ="bkID">BOOK ID</label><input type="text" name="id"><br>
+
+<br class="clear" />
+	<br />
+<input type="submit"><br>
+</form></div>
+
+<div id="AdUsr" class="displaynone">
+<form action="addUser" method="post">
+<h2><u>Add User Here</u></h2>
+<label for ="usrID">USER ID</label><input type="text" name="id"><br>
+<label for ="name">NAME</label><input type="text" name="name"><br>
+
+<br class="clear" />
+	<br />
+<input type="submit"><br>
+</form></div>
+
+<div id="RmUsr" class="displaynone">
+<form action="removeUser" method="post">
+<h2><u>Remove User</u></h2>
+<label for ="usrID">USER ID</label><input type="text" name="id"><br>
+
+
+<br class="clear" />
+	<br />
+<input type="submit"><br>
+</form></div>
+
+
+<div id="search" class="displaynone">
+<form action="Search" method="post">
+<h2><u>Search</u></h2>
+<label for ="Book title">BOOK TITLE</label><input type="text" name="title"><br>
+
+
+<br class="clear" />
+	<br />
+<input type="submit"><br>
+</form></div>
+
+
+
+<script>
+function AdBk() {
+    var x = document.getElementById("AdBk");
+    x.classList.toggle("displaynone");
+  }
+
+function RmBk() {
+    var x = document.getElementById("RmBk");
+    x.classList.toggle("displaynone");
+  }
+function AdUsr() {
+    var x = document.getElementById("AdUsr");
+    x.classList.toggle("displaynone");
+  }
+  
+function search() {
+    var x = document.getElementById("search");
+    x.classList.toggle("displaynone");
+}
+function RmUsr() {
+    var x = document.getElementById("RmUsr");
+    x.classList.toggle("displaynone");
+}
+</script>
+
+</body>
+</html>
